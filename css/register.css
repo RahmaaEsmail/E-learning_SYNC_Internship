@@ -150,3 +150,8 @@ button[disabled] {
     text-align: center;
     cursor: pointer;
 }
+
+/* .register p:last-child a:active ,
+.login p:last-child a:active {
+    color: blue;
+} */

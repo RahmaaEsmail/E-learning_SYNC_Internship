@@ -1,8 +1,8 @@
+// reference
 const registerBox = document.querySelector('.register');
 const loginBox = document.querySelector('.login')
 const registerName = document.querySelector('#first-name');
 const registerEmail = document.querySelector('#email');
-// reference
 const registerPassword = document.querySelector('#password');
 const submitBtn = document.querySelector('#confirmBtn');
 const inputs = document.querySelectorAll('input');
@@ -11,6 +11,7 @@ const userEmailAlert = document.querySelector('.user-email-alert');
 const userPassAlert = document.querySelector('.user-pass-alert');
 const requireInfo = document.querySelector('.requireInfo')
 const loginBtn = document.querySelector('.login-btn');
+const invalidData = document.querySelector('.wrong-data')
 const infoList = [];
 
 // Register
@@ -110,7 +111,6 @@ const signIn = function () {
     const loginEmail = document.getElementById('login-email');
     const loginPassword = document.getElementById('login-password');
     const requireInfo2 = document.querySelector('.requireInfo2');
-    const invalidData = document.querySelector('.wrong-data')
     if (loginEmail.value == '' || loginPassword.value == '') {
         requireInfo2.classList.remove('hide');
         return false;
@@ -119,7 +119,7 @@ const signIn = function () {
         requireInfo2.classList.add('hide');
         for (let i = 0; i < infoList.length; i++) {
             if (infoList[i].email === loginEmail.value && infoList[i].pass === loginPassword.value) {
-                loginBtn.setAttribute('href', 'home.html')
+                loginBtn.setAttribute('href', 'index.html')
                 invalidData.classList.add('hide')
             }
             else {
