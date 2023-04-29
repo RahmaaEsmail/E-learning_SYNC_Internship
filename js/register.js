@@ -119,7 +119,7 @@ const signIn = function () {
         requireInfo2.classList.add('hide');
         for (let i = 0; i < infoList.length; i++) {
             if (infoList[i].email === loginEmail.value && infoList[i].pass === loginPassword.value) {
-                loginBtn.setAttribute('href', 'index.html')
+                loginBtn.setAttribute('href', 'home.html')
                 invalidData.classList.add('hide')
             }
             else {
