@@ -151,7 +151,7 @@ button[disabled] {
     cursor: pointer;
 }
 
-/* .register p:last-child a:active ,
+.register p:last-child a:active ,
 .login p:last-child a:active {
     color: blue;
-} */
+}

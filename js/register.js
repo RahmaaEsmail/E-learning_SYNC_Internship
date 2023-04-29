@@ -11,15 +11,18 @@ const userEmailAlert = document.querySelector('.user-email-alert');
 const userPassAlert = document.querySelector('.user-pass-alert');
 const requireInfo = document.querySelector('.requireInfo')
 const loginBtn = document.querySelector('.login-btn');
-const invalidData = document.querySelector('.wrong-data')
-const infoList = [];
+const loginBtnSubmit = document.querySelector('.submit-login');
+const invalidData = document.querySelector('.wrong-data');
+let infoList = [];
 
+
+if (JSON.parse(localStorage.getItem('data')))
+    infoList = JSON.parse(localStorage.getItem('data'))
 // Register
 const signUp = function () {
     if (registerEmail.value == '' || registerName.value == '' || registerPassword.value == '') {
         requireInfo.classList.remove('hide');
         return false;
-
     }
     else {
         if (validateInputs() === true) {
@@ -37,10 +40,10 @@ const signUp = function () {
             requireInfo.classList.add('hide');
             infoList.push(user)
             console.log(infoList);
-            localStorage.setItem('PersonalInfo', JSON.stringify(infoList));
+            localStorage.setItem('data', JSON.stringify(infoList));
             resetForm();
             registerBox.classList.add('hide');
-            loginBox.classList.remove('hide')
+            loginBox.classList.remove('hide');
             return true;
         }
     }
@@ -62,7 +65,6 @@ const validateName = function () {
 
     else {
         userNameAlert.classList.remove('hide');
-        confirmBtn.disabled = 'true';
         return false;
     }
 }
@@ -131,7 +133,7 @@ const signIn = function () {
 
 // handlers
 submitBtn.addEventListener('click', signUp)
-loginBtn.addEventListener('click', signIn)
+loginBtnSubmit.addEventListener('click', signIn)
 document.querySelector('.goToRegister').addEventListener('click', function () {
     registerBox.classList.add('hide');
     loginBox.classList.remove('hide')
